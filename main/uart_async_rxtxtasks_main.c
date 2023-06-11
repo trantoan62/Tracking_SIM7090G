@@ -182,10 +182,10 @@ static void tx_task(void *arg)
 					sendData(TX_TASK_TAG, dataSend);
 					ESP_LOGI(TX_TASK_TAG,"Gui");
 					break;
-				case 21: //AT+SMUNSUB
-					sendData(TX_TASK_TAG, "AT+SMUNSUB=\"messages/681b35dc-8a93-4f52-a51d-7710d30e4bdf/status\"\r");
-					ESP_LOGI(TX_TASK_TAG,"AT+SMUNSUB=\"messages/681b35dc-8a93-4f52-a51d-7710d30e4bdf/status\",0");
-					break;
+//				case 21: //AT+SMUNSUB
+//					sendData(TX_TASK_TAG, "AT+SMUNSUB=\"messages/681b35dc-8a93-4f52-a51d-7710d30e4bdf/status\"\r");
+//					ESP_LOGI(TX_TASK_TAG,"AT+SMUNSUB=\"messages/681b35dc-8a93-4f52-a51d-7710d30e4bdf/status\",0");
+//					break;
 
 				//reset things:
 				case 115:
@@ -271,16 +271,10 @@ static void rx_task(void *arg)
 					break;
 				case 20: //luc gui ban tin:
 					if (strstr((char*)data, "+SMSUB") != NULL){
-						step++;
-						flag = 1;
-        			}
-					break;
-				case 21: //luc gui ban tin:
-                    if (strstr((char*)data, "OK") != NULL) {
     					vTaskDelay(60000*5 / portTICK_PERIOD_MS);
-    					step = 15;
+    					step = 16;
     					flag = 1;
-                    }
+        			}
 					break;
 
 				case 115:
