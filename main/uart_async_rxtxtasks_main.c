@@ -229,7 +229,7 @@ static void rx_task(void *arg)
 					break;
 				case 16: //check ket noi mqtt
 					if (strstr((char*)data, "+SMSTATE: 0") == NULL){ step++; }
-					else { step = 13; }
+					else { step = 14; }
 					flag = 1;
 					break;
 				case 17: //Lay thong tin RSRP, RSRQ, SINR, PCI, CellID cot dau tien (cung co the dung AT+CPSI? hien tai nhung khong co pci)
