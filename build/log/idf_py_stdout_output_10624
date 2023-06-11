@@ -1,0 +1,16 @@
+[1/5] cmd.exe /C "cd /D D:\phanmemm\Espressif\frameworks\esp-idf-v5.0.1\workspace\uart_async_rxtxtasks\build\esp-idf\esptool_py && python D:/phanmemm/Espressif/frameworks/esp-idf-v5.0.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/phanmemm/Espressif/frameworks/esp-idf-v5.0.1/workspace/uart_async_rxtxtasks/build/partition_table/partition-table.bin D:/phanmemm/Espressif/frameworks/esp-idf-v5.0.1/workspace/uart_async_rxtxtasks/build/uart_async_rxtxtasks.bin"
+uart_async_rxtxtasks.bin binary size 0x32680 bytes. Smallest app partition is 0x100000 bytes. 0xcd980 bytes (80%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D D:\phanmemm\Espressif\frameworks\esp-idf-v5.0.1\workspace\uart_async_rxtxtasks\build\bootloader\esp-idf\esptool_py && python D:/phanmemm/Espressif/frameworks/esp-idf-v5.0.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 D:/phanmemm/Espressif/frameworks/esp-idf-v5.0.1/workspace/uart_async_rxtxtasks/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6710 bytes. 0x8f0 bytes (8%) free.
+[2/3] cmd.exe /C "cd /D D:\phanmemm\Espressif\frameworks\esp-idf-v5.0.1\components\esptool_py && D:\phanmemm\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=D:/phanmemm/Espressif/frameworks/esp-idf-v5.0.1 -D SERIAL_TOOL=python;;D:/phanmemm/Espressif/frameworks/esp-idf-v5.0.1/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=D:/phanmemm/Espressif/frameworks/esp-idf-v5.0.1/workspace/uart_async_rxtxtasks/build -P D:/phanmemm/Espressif/frameworks/esp-idf-v5.0.1/components/esptool_py/run_serial_tool.cmake"
+esptool esp32 -p COM6 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 uart_async_rxtxtasks.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.5.1
+Serial port COM6
+Connecting......................................
+
+A fatal error occurred: Failed to connect to ESP32: No serial data received.
+For troubleshooting steps visit: https://docs.espressif.com/projects/esptool/en/latest/troubleshooting.html
+FAILED: CMakeFiles/flash D:/phanmemm/Espressif/frameworks/esp-idf-v5.0.1/workspace/uart_async_rxtxtasks/build/CMakeFiles/flash 
+cmd.exe /C "cd /D D:\phanmemm\Espressif\frameworks\esp-idf-v5.0.1\components\esptool_py && D:\phanmemm\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=D:/phanmemm/Espressif/frameworks/esp-idf-v5.0.1 -D SERIAL_TOOL=python;;D:/phanmemm/Espressif/frameworks/esp-idf-v5.0.1/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=D:/phanmemm/Espressif/frameworks/esp-idf-v5.0.1/workspace/uart_async_rxtxtasks/build -P D:/phanmemm/Espressif/frameworks/esp-idf-v5.0.1/components/esptool_py/run_serial_tool.cmake"
+ninja: build stopped: subcommand failed.
